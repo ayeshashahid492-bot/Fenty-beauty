@@ -8,9 +8,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <span className="text-xl font-bold text-primary-600">
-                Capstone Manager
+              <span className="text-xl font-bold text-primary-600 mr-8">
+                Fenty Beauty
               </span>
+              <div className="hidden sm:flex space-x-4">
+                <Link href="/" className="text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Home</Link>
+                <Link href="/products" className="text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Products</Link>
+                <Link href="/about" className="text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">About</Link>
+                <Link href="/contact" className="text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Contact</Link>
+                <Link href="/testimonials" className="text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">Testimonials</Link>
+                <Link href="/faqs" className="text-gray-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors">FAQs</Link>
+              </div>
             </div>
             <div className="flex items-center space-x-4">
               <Link
@@ -34,19 +42,19 @@ export default function Home() {
       <section className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Manage Your Capstone Project
-            <span className="text-primary-600"> Effortlessly</span>
+            Design Your Own
+            <span className="text-primary-600"> Makeup</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Collaborate with your team, track tasks, and deliver your capstone project on time.
-            Built for students, by students.
+            Customers can customize lipstick and blush casing colors and engravings.
+            Create your personalized Fenty Beauty look today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auth/signup"
-              className="bg-primary-600 text-white hover:bg-primary-700 px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
+              className="bg-primary-600 text-white hover:bg-primary-700 px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-lg"
             >
-              Start Your Project
+              Start Designing
             </Link>
             <Link
               href="/auth/signin"
@@ -59,45 +67,38 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 border-t-2 border-gold-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Everything You Need
+            Customize Every Detail
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
-              title="Project Management"
-              description="Create projects, set milestones, and track progress from start to finish."
-              icon="📋"
+              title="Lipstick Shades"
+              description="Choose from a wide variety of iconic Fenty Beauty shades."
+              icon="💄"
             />
             <FeatureCard
-              title="Team Collaboration"
-              description="Invite team members, assign tasks, and communicate effectively."
-              icon="👥"
+              title="Custom Engravings"
+              description="Add a personal touch with a custom name or message engraving."
+              icon="✨"
             />
             <FeatureCard
-              title="Task Tracking"
-              description="Break down work into tasks, set priorities, and never miss a deadline."
-              icon="✅"
+              title="Premium Cases"
+              description="Select from exclusive gold and silver casing options."
+              icon="👑"
             />
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-50 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
-          <p>Sample Next.js Project for Capstone Course</p>
-          <p className="text-sm mt-2">Built with Next.js, PostgreSQL, Prisma, and NextAuth.js</p>
-        </div>
-      </footer>
     </main>
   );
 }
 
 function FeatureCard({ title, description, icon }: { title: string; description: string; icon: string }) {
   return (
-    <div className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+    <div className="bg-gray-50 border border-gray-100 rounded-xl p-6 text-center hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:border-gold-500 transition-all duration-300">
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>

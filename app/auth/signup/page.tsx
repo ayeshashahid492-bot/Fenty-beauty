@@ -72,7 +72,7 @@ export default function SignUpPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <Link href="/" className="block text-center">
-            <span className="text-2xl font-bold text-primary-600">Capstone Manager</span>
+            <span className="text-2xl font-bold text-primary-600">Fenty Beauty</span>
           </Link>
           <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
             Create your account

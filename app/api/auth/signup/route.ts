@@ -2,6 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import prisma from '@/prisma/client';
 
+import { Resend } from "resend";
+import { welcomeEmail } from "@/app/utils/emailTemplates/welcomeEmail";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -66,6 +72,12 @@ export async function POST(request: NextRequest) {
         createdAt: true,
       },
     });
+    await resend.emails.send({
+  from: "onboarding@resend.dev",
+  to: user.email,
+  subject: "Welcome to Fenty Beauty!",
+  html: welcomeEmail(user.firstName),
+});
 
     return NextResponse.json(
       {

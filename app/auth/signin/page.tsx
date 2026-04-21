@@ -45,7 +45,7 @@ function SignInForm() {
     <div className="max-w-md w-full space-y-8">
       <div>
         <Link href="/" className="block text-center">
-          <span className="text-2xl font-bold text-primary-600">Capstone Manager</span>
+          <span className="text-2xl font-bold text-primary-600">Fenty Beauty</span>
         </Link>
         <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
           Sign in to your account
@@ -84,9 +84,16 @@ function SignInForm() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
+            <div className="flex items-center justify-between">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <div className="text-sm">
+                <Link href="/reset-password" className="font-medium text-primary-600 hover:text-primary-500">
+                  Forgot Password?
+                </Link>
+              </div>
+            </div>
             <input
               id="password"
               name="password"
